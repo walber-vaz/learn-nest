@@ -18,9 +18,21 @@ describe('UserController', () => {
     userController = app.get<UserController>(UserController);
   });
 
-  describe('root', () => {
+  describe('Create User', () => {
     it('should return created user', async () => {
       expect(await userController.create(mockUser)).toEqual({ body: mockUser });
+    });
+  });
+
+  describe('Find All Users', () => {
+    it('should return an array of users', async () => {
+      expect(await userController.findAll()).toEqual({ users: [{}] });
+    });
+  });
+
+  describe('Find One User', () => {
+    it('should return a user by id', async () => {
+      expect(await userController.findOne('1')).toEqual({ user: {}, id: '1' });
     });
   });
 });
