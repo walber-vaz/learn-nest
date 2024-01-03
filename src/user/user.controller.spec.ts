@@ -35,4 +35,14 @@ describe('UserController', () => {
       expect(await userController.findOne('1')).toEqual({ user: {}, id: '1' });
     });
   });
+
+  describe('Update User', () => {
+    it('should return updated user', async () => {
+      expect(await userController.update('1', mockUser)).toEqual({
+        user: {},
+        id: '1',
+        body: mockUser,
+      });
+    });
+  });
 });
