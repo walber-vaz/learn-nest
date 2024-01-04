@@ -45,4 +45,10 @@ describe('UserController', () => {
       });
     });
   });
+
+  describe('Delete User', () => {
+    it('should return deleted user', async () => {
+      expect(await userController.remove('1')).toEqual({ user: {}, id: '1' });
+    });
+  });
 });
