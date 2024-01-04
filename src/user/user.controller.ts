@@ -39,7 +39,7 @@ export class UserController {
   }
 
   @Delete(':id')
-  async remove(@Param('id', ParseIntPipe) id: string) {
+  async remove(@Param('id', ParseIntPipe) id: number) {
     return { user: {}, id };
   }
 }
