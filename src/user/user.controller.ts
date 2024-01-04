@@ -7,11 +7,12 @@ import {
   Patch,
   Post,
 } from '@nestjs/common';
+import { CreateUserDTO } from './dto/createUser.dto';
 
 @Controller('users')
 export class UserController {
   @Post()
-  async create(@Body() body: any) {
+  async create(@Body() body: CreateUserDTO) {
     return { body };
   }
 
